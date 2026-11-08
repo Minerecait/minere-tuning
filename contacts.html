@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Контакты | MINERE</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header id="header" class="scrolled">
+        <div class="container nav-container">
+            <a href="osnova.html" class="logo">MINERE<span>//</span></a>
+            <nav>
+                <ul class="nav-links" id="nav-links">
+                    <li><a href="osnova.html">Главная</a></li>
+                    <li><a href="services.html">Услуги</a></li>
+                    <li><a href="advantages.html">Преимущества</a></li>
+                    <li><a href="contacts.html">Контакты</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <a href="booking.html" class="btn btn-outline"><i class="fa-brands fa-telegram"></i> &nbsp;Telegram</a>
+                <i class="fa-solid fa-bars burger-menu" id="burger-menu"></i>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="inner-page-header reveal">
+            <div class="container">
+                <h1>Наши <span>Контакты</span></h1>
+            </div>
+        </section>
+
+        <section class="section-padding" style="padding-top: 20px; min-height: 50vh;">
+            <div class="container">
+                <div class="advantages-grid" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px;">
+                    <div class="adv-card glass reveal">
+                        <div class="adv-icon-wrap"><i class="fa-solid fa-phone"></i></div>
+                        <h4>Телефон</h4>
+                        <p><a href="tel:+79000000000" style="color: var(--text-light); font-size: 1.1rem; font-weight: bold;">+7 (900) 000-00-00</a></p>
+                    </div>
+                    <div class="adv-card glass reveal" style="transition-delay: 0.1s;">
+                        <div class="adv-icon-wrap"><i class="fa-solid fa-location-dot"></i></div>
+                        <h4>Адрес</h4>
+                        <p style="color: var(--text-light);">г. Самара, Ракитовское шоссе, стр. 10</p>
+                    </div>
+                    <div class="adv-card glass reveal" style="transition-delay: 0.2s;">
+                        <div class="adv-icon-wrap"><i class="fa-regular fa-clock"></i></div>
+                        <h4>Режим работы</h4>
+                        <p style="color: var(--text-light);">Ежедневно с 10:00 до 20:00<br>Без выходных</p>
+                    </div>
+                    <div class="adv-card glass reveal" style="transition-delay: 0.3s;">
+                        <div class="adv-icon-wrap"><i class="fa-brands fa-telegram"></i></div>
+                        <h4>Мессенджеры</h4>
+                        <p><a href="booking.html" style="color: var(--accent); font-weight: bold;">Написать в Telegram</a></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2026 MINERE Performance & Tuning. Разработано с чистым кодом.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

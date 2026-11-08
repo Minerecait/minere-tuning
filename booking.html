@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Оставить заявку | MINERE</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Подключаем твой единый файл стилей -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- ШАПКА -->
+    <header id="header" class="scrolled">
+        <div class="container nav-container">
+            <a href="osnova.html" class="logo">MINERE<span>//</span></a>
+            
+            <nav>
+              <ul class="nav-links" id="nav-links">
+        <li><a href="osnova.html">Главная</a></li>
+        <li><a href="services.html">Услуги</a></li>
+        <li><a href="advantages.html">Преимущества</a></li>
+        <li><a href="contacts.html">Контакты</a></li>
+    </ul>
+            </nav>
+
+            <div class="header-actions">
+                <a href="booking.html" class="btn btn-outline"><i class="fa-brands fa-telegram"></i> &nbsp;Telegram</a>
+                <i class="fa-solid fa-bars burger-menu" id="burger-menu"></i>
+            </div>
+        </div>
+    </header>
+
+    <main style="padding-top: 120px; min-height: 80vh;">
+        <!-- ФОРМА ЗАЯВКИ -->
+        <section class="form-section" id="booking">
+            <div class="container">
+                <div class="form-wrapper glass reveal">
+                    <h2 class="section-title" style="margin-bottom: 20px;">Оставить <span>Заявку</span></h2>
+                    <p style="text-align: center; color: var(--text-muted); margin-bottom: 40px;">Оставьте данные вашего авто, и мастер свяжется с вами для точного расчета стоимости.</p>
+                    
+                    <form id="lead-form">
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="brand">Марка авто *</label>
+                                <input type="text" id="brand" class="form-control" placeholder="Например: BMW" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="model">Модель и год *</label>
+                                <input type="text" id="model" class="form-control" placeholder="Например: M5 F90, 2021" required>
+                            </div>
+                            
+                            <div class="form-group full">
+                                <label for="service">Интересующая услуга</label>
+                                <select id="service" class="form-control">
+                                    <option value="chip">Чип-тюнинг (Stage 1/2/3)</option>
+                                    <option value="wrap">Оклейка бронепленкой</option>
+                                    <option value="detailing">Полировка и Керамика</option>
+                                    <option value="exhaust">Выхлопная система</option>
+                                    <option value="other">Комплексный проект / Другое</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group full">
+                                <label for="contact">Ваш Телефон или Telegram (@nick) *</label>
+                                <input type="text" id="contact" class="form-control" placeholder="+7 (999) 000-00-00" required>
+                            </div>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary btn-submit" id="submit-btn">Получить расчет стоимости</button>
+                        
+                        <div class="form-success" id="form-success">
+                            <i class="fa-solid fa-circle-check"></i> Заявка успешно отправлена!
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ПОДВАЛ -->
+    <footer>
+        <div class="container">
+            <div class="footer-bottom" style="border-top: none; padding-top: 0;">
+                <p>&copy; 2026 MINERE Performance & Tuning.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Твой скрипт (там уже есть логика формы и снег) -->
+    <script src="script.js"></script>
+</body>
+</html>

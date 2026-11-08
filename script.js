@@ -40,21 +40,32 @@ document.addEventListener('DOMContentLoaded', () => {
     }, { threshold: 0.15, rootMargin: "0px 0px -50px 0px" });
     
     reveals.forEach(r => observer.observe(r));
+/* --- 3. МОБИЛЬНОЕ МЕНЮ --- */
+const burger = document.getElementById('burger-menu');
+const navLinks = document.getElementById('nav-links');
 
-    /* --- 3. МОБИЛЬНОЕ МЕНЮ --- */
-    const burger = document.getElementById('burger-menu');
-    const navLinks = document.getElementById('nav-links');
-    
-    if (burger && navLinks) {
-        burger.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-            if(navLinks.classList.contains('active')){
-                burger.classList.replace('fa-bars', 'fa-xmark');
-            } else {
-                burger.classList.replace('fa-xmark', 'fa-bars');
-            }
+if (burger && navLinks) {
+    // Открытие/закрытие по клику на бургер
+    burger.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+        if (navLinks.classList.contains('active')) {
+            burger.classList.replace('fa-bars', 'fa-xmark');
+            document.body.style.overflow = 'hidden'; // Блокируем скролл страницы под меню
+        } else {
+            burger.classList.replace('fa-xmark', 'fa-bars');
+            document.body.style.overflow = ''; // Возвращаем скролл
+        }
+    });
+
+    // Закрытие меню при клике на любой пункт
+    navLinks.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            navLinks.classList.remove('active');
+            burger.classList.replace('fa-xmark', 'fa-bars');
+            document.body.style.overflow = '';
         });
-    }
+    });
+}
 
     /* --- 4. РЕАЛЬНАЯ ОТПРАВКА В TELEGRAM --- */
     const form = document.getElementById('lead-form');

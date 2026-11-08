@@ -165,22 +165,106 @@ footer { background: #040506; padding: 80px 0 30px; border-top: 1px solid var(--
 .footer-bottom { text-align: center; padding-top: 30px; border-top: 1px solid var(--border-glass); color: var(--text-muted); font-size: 0.85rem; }
 
 /* =========================================
-   10. МОБИЛЬНАЯ АДАПТАЦИЯ
+   10. МОБИЛЬНАЯ АДАПТАЦИЯ (ПОЛНЫЙ ФИКС)
    ========================================= */
+
 @media (max-width: 1024px) {
-    .hero h1 { font-size: 3.2rem; }
+    .hero h1 { font-size: 3rem; }
     .advantages-grid { grid-template-columns: repeat(2, 1fr); }
     .footer-grid { grid-template-columns: 1fr 1fr; }
 }
+
 @media (max-width: 768px) {
-    .nav-links, .header-actions .btn { display: none; }
-    .burger-menu { display: block; }
-    .hero h1 { font-size: 2.3rem; }
-    .hero-buttons { flex-direction: column; }
-    .hero-stats { flex-direction: column; gap: 20px; border: none; }
+    /* 1. Отступ и размеры первого экрана */
+    .hero {
+        height: auto;
+        min-height: 100vh;
+        padding-top: 110px; /* Отодвигаем контент из-под шапки */
+        padding-bottom: 60px;
+        align-items: flex-start;
+    }
+
+    .hero-subtitle {
+        font-size: 0.8rem;
+        margin-bottom: 10px;
+    }
+
+    .hero h1 {
+        font-size: 2rem; /* Оптимальный размер под экран телефона */
+        line-height: 1.2;
+        margin-bottom: 15px;
+    }
+
+    .hero p {
+        font-size: 0.95rem;
+        margin-bottom: 30px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        gap: 12px;
+        margin-bottom: 40px;
+    }
+
+    .hero-buttons .btn {
+        width: 100%; /* Кнопки во всю ширину экрана для удобного тапа */
+        padding: 14px;
+    }
+
+    .hero-stats {
+        flex-direction: column;
+        gap: 15px;
+        border-top: 1px solid var(--border-glass);
+        padding-top: 25px;
+    }
+
+    .stat-item h4 { font-size: 1.6rem; }
+
+    /* 2. Рабочее мобильное выпадающее меню */
+    .header-actions .btn { display: none; }
+    .burger-menu { 
+        display: block; 
+        z-index: 1001; 
+        font-size: 1.5rem;
+    }
+
+    .nav-links {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 25px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background: rgba(7, 8, 10, 0.98);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        transform: translateY(-100%); /* Прячем вверх */
+        transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+        z-index: 999;
+    }
+
+    .nav-links.active {
+        transform: translateY(0); /* Плавно выезжает на весь экран при клике */
+    }
+
+    .nav-links a {
+        font-size: 1.3rem;
+        font-weight: 700;
+        font-family: 'Montserrat', sans-serif;
+    }
+
+    /* 3. Сетка и формы */
+    .section-padding { padding: 60px 0; }
+    .section-title { font-size: 1.8rem; margin-bottom: 30px; }
     .form-grid { grid-template-columns: 1fr; }
-    .form-wrapper { padding: 30px 20px; }
-    .footer-grid { grid-template-columns: 1fr; text-align: center; }
+    .form-wrapper { padding: 25px 15px; }
+    .chips-wrapper { justify-content: flex-start; }
+    .chip-text { font-size: 0.8rem; padding: 8px 14px; }
+    .footer-grid { grid-template-columns: 1fr; text-align: center; gap: 30px; }
     .social-links { justify-content: center; }
 }
 /* =========================================
